@@ -15,28 +15,30 @@ body {
   margin-top: 2rem;
   backdrop-filter: blur(10px);
   border-radius: 10px;
-  background: snow;
-  box-shadow: 0px 0px 20px red;
+  background: rgba(255, 255, 0, 0.834);
+  box-shadow: 0px 0px 40px whitesmoke;
   height: 650px;
-  border: 4px solid snow;
+  border: 5px groove black;
 }
 .calculator h1 {
-  color: rgb(244, 15, 15);
+  color: black;
   font-family: sans-serif;
   text-align: center;
   font-size: 45px;
 }
 .display {
   height: 60px;
-  font-size: 24px;
+  font-size: 25px;
   text-align: right;
   padding: 5px;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
+  background-color: gainsboro;
+  border: 2px solid rgba(0, 0, 0, 0.804);
   border-radius: 5px;
   margin-bottom: 15px;
-  overflow: auto;
+  overflow: hidden;
   margin-top: -1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
 }
 
 .buttons {
@@ -46,6 +48,18 @@ body {
   margin-left: 1.2rem;
 }
 
+.buttons #clr-btn {
+  background-color: cyan;
+}
+.buttons #clr1-btn1 {
+  background-color: rgba(251, 6, 6, 0.847);
+}
+.buttons #clr1-btn1:hover {
+  background-color: rgb(160, 159, 159);
+}
+.buttons #clr-btn:hover {
+  background-color: rgb(160, 159, 159);
+}
 button {
   height: 80px;
   width: 70px;
@@ -53,10 +67,10 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #f1f1f1;
+  background-color: rgba(132, 4, 252, 0.712);
   border: 1.5px solid black;
 }
 
 button:hover {
-  background-color: #7c6e6e;
+  background-color: rgb(160, 159, 159);
 }
