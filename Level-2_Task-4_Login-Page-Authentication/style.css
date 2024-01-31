@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: url('bac.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+form {
+  height: 520px;
+  width: 400px;
+  background-color: rgba(245, 245, 245, 0.373);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 15px;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 0 40px snow(8, 7, 16, 0.6);
+  padding: 50px 35px;
+  border: 0.5px solid black;
+}
+
+form h3 {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: black;
+  margin-top: -0rem;
+}
+
+form i {
+  font-size: 18px;
+}
+label {
+  display: block;
+  margin-top: 30px;
+  font-size: 19px;
+  font-weight: 700;
+  color: black;
+}
+
+input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+  outline: none;
+  border: 0.1px solid black;
+}
+
+::placeholder {
+  color: black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+button {
+  margin-top: 50px;
+  width: 100%;
+  background-color: transparent;
+  color: black;
+  padding: 15px 0;
+  font-size: 25px;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 0.5px solid black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+button:hover {
+  transform: scale(1.1);
+  transition: all 0.5s ease-out;
+}

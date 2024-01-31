@@ -5,10 +5,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('Cal-ac.jpg');
+  background: url('BackIMG.jpg');
   background-size: cover;
 }
-
 .calculator {
   width: 400px;
   padding: 10px;
@@ -67,7 +66,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: rgba(132, 4, 252, 0.712);
+  background-color: rgba(132, 4, 252, 0.641);
   border: 1.5px solid black;
 }
 
