@@ -8,7 +8,6 @@ body {
 }
 
 form {
-  height: 520px;
   width: 400px;
   background-color: rgba(245, 245, 245, 0.373);
   position: absolute;
@@ -18,8 +17,34 @@ form {
   border-radius: 15px;
   backdrop-filter: blur(2px);
   box-shadow: 0 0 40px snow(8, 7, 16, 0.6);
-  padding: 50px 35px;
+  padding: 30px 35px;
+  padding-top: 10px;
   border: 0.5px solid black;
+}
+#reg {
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+#reg button {
+  width: 100%;
+  background-color: transparent;
+  color: black;
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 0.5px solid black;
+  margin-top: 20px;
+}
+#regbutton {
+  margin-top: 2px !important;
+}
+#reg label {
+  margin-top: 15px;
+}
+#reg #btnlog {
+  margin-top: -0.2rem;
 }
 
 form h3 {
@@ -35,7 +60,7 @@ form i {
 }
 label {
   display: block;
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 19px;
   font-weight: 700;
   color: black;
@@ -60,14 +85,19 @@ input {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
 }
-
+form #forgot {
+  margin-top: 0.5rem;
+  color: black;
+  font-weight: 500;
+  text-decoration: underline;
+}
 button {
-  margin-top: 50px;
+  margin-top: 1.5px;
   width: 100%;
   background-color: transparent;
   color: black;
-  padding: 15px 0;
-  font-size: 25px;
+  padding: 10px 0;
+  font-size: 20px;
   font-weight: 700;
   border-radius: 5px;
   cursor: pointer;
@@ -79,4 +109,8 @@ button {
 button:hover {
   transform: scale(1.1);
   transition: all 0.5s ease-out;
+}
+
+form #registerbtn {
+  margin-top: 3px;
 }

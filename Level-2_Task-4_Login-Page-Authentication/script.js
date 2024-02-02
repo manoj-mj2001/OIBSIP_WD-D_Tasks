@@ -1,51 +1,83 @@
-// import fs from 'fs';
-// const fs = require('fs');
-
-function authenticateLogin() {
+async function Login() {
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
 
-  var validUsername = 'admin';
-  var validPassword = 'admin@123';
+  const users = JSON.parse(localStorage.getItem('users'));
 
-  if (username === validUsername && password === validPassword) {
-    alert('Login Successful..!');
+  if (
+    users.some((item) => item.name === username) ||
+    users.some((item) => item.email === username)
+  ) {
+    const userIndex =
+      users.findIndex((item) => item.name === username) ||
+      users.findIndex((item) => item.email === username);
+    const user = users[userIndex];
+
+    try {
+      if (await authenticateLogin(user.hashedPassword, password)) {
+        alert('Login Successful..!');
+        window.location.reload();
+      } else {
+        alert('Incorrect E-mail or Password..!');
+        window.location.reload();
+      }
+    } catch (error) {
+      alert('Error during Login..!');
+    }
   } else {
-    alert('Invalid Username or Password. Please try again..!');
+    alert('User not found..!');
+    window.location.reload();
   }
 }
 
-function registerForm(e) {
-  e.preventDefault();
+async function authenticateLogin(saved_password, password) {
+  const inputPass = await hashData(password);
+  return inputPass === saved_password ? true : false;
+}
+
+async function registerForm(event) {
+  event.preventDefault();
   var name = document.getElementById('name').value;
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
   var confirmpassword = document.getElementById('confirmpassword').value;
 
-  const user = fetch('user.json')
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      return data;
-    });
   if (password !== confirmpassword) {
-    return alert('Password and Confirm Password Must Be Same..!');
+    return alert('Password and Confirm Password must be Same..!');
   }
-
-  if (
-    user.length &&
-    user.some((user) => user.username === usernameToCheck).length !== 0
-  ) {
-    return alert('User already registered..!');
+  const hashedPassword = await hashData(password);
+  if (!localStorage.getItem('users')) {
+    localStorage.setItem(
+      'users',
+      JSON.stringify([{ name, email, hashedPassword }])
+    );
+  } else {
+    const users = JSON.parse(localStorage.getItem('users'));
+    if (
+      users.some((item) => item.name === name) ||
+      users.some((item) => item.email === email)
+    ) {
+      alert('User already existed..!');
+      return window.location.reload();
+    } else {
+      users.push({ name, email, hashedPassword });
+      localStorage.setItem('users', JSON.stringify(users));
+      alert('Registered Successfully..!...Go to Login Page');
+      return window.location.reload();
+    }
   }
+}
 
-  const data = {
-    name,
-    email,
-    password,
-  };
-  user.push(data);
+async function hashData(data) {
+  const encoder = new TextEncoder();
+  const buffer = encoder.encode(data);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+
+  const hashedData = Array.from(new Uint8Array(hashBuffer))
+    .map((byte) => byte.toString(16).padStart(2, '0'))
+    .join('');
+
+  return hashedData;
 }
 
 const passwordField = document.getElementById('password');

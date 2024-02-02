@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form>
+    <form onsubmit="Login()">
       <h3>Login Form</h3>
       <label for="username">Username <i class="fas fa-user-circle"></i></label>
       <input
@@ -25,14 +25,19 @@
         <span class="password-toggle-icon"
           ><i class="fas fa-eye-slash"></i></span
       ></label>
-
       <input
         type="password"
         placeholder="Enter your Password : "
         id="password"
       />
-      <button type="submit" onclick="authenticateLogin()">Login ></button>
-      <a href="register.html"><button type="button">Register ></button></a>
+
+      <p id="forgot">Forgot Password?</p>
+
+      <button type="submit">Login</button>
+      <p id="forgot">Don't have an account?</p>
+      <a href="register.html"
+        ><button type="button" id="registerbtn">Register</button></a
+      >
     </form>
     <script src="script.js"></script>
   </body>

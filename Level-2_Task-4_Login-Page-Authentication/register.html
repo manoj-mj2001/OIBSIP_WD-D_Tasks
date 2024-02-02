@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Registration Form Authentication</title>
+    <title>Registeration Form Authentication</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -9,22 +9,37 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="reg.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form onsubmit="(e)=>regiterForm(e)">
+    <form onsubmit="registerForm(event)" id="reg">
       <h3>Registration Form</h3>
-      <label for="name">Name <i class="fas fa-user-circle"></i></label>
-      <input type="text" placeholder="Name :" id="name" />
+      <label for="name">Username <i class="fas fa-user-circle"></i></label>
+      <input
+        type="text"
+        placeholder="Username :"
+        id="name"
+        autocomplete="true"
+      />
       <label for="email">E-Mail <i class="fas fa-envelope"></i></label>
-      <input type="email" placeholder="E-Mail : " id="email" />
+      <input
+        type="email"
+        placeholder="E-mail : "
+        id="email"
+        autocomplete="true"
+      />
       <label for="password"
         >Password
         <span class="password-toggle-icon"
           ><i class="fas fa-eye-slash"></i></span
       ></label>
 
-      <input type="password" placeholder="Password : " id="password" />
+      <input
+        type="password"
+        placeholder="Password : "
+        id="password"
+        autocomplete="true"
+      />
 
       <label for="confirmpassword"
         >Confirm Password
@@ -35,9 +50,12 @@
         type="password"
         placeholder="Confirm Password : "
         id="confirmpassword"
+        autocomplete="true"
       />
-      <button type="submit">Submit</button>
-      <a href="index.html"><button type="button">Login</button></a>
+      <br />
+      <button type="submit" id="regbutton">Register</button>
+      <p id="forgot">Already have an account?</p>
+      <a href="index.html"><button type="button" id="btnlog">Login</button></a>
     </form>
     <script src="script.js"></script>
   </body>
