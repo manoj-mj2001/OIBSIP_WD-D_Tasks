@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Registeration Form Authentication</title>
+    <title>OISIP Level-2->Task-4 : Registeration Form Authentication</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,20 +13,20 @@
   </head>
   <body>
     <form onsubmit="registerForm(event)" id="reg">
-      <h3>Registration Form</h3>
+      <h3>Registeration Form</h3>
       <label for="name">Username <i class="fas fa-user-circle"></i></label>
       <input
         type="text"
         placeholder="Username :"
         id="name"
-        autocomplete="true"
+        autocomplete="off"
       />
       <label for="email">E-Mail <i class="fas fa-envelope"></i></label>
       <input
         type="email"
         placeholder="E-mail : "
         id="email"
-        autocomplete="true"
+        autocomplete="off"
       />
       <label for="password"
         >Password
@@ -38,7 +38,7 @@
         type="password"
         placeholder="Password : "
         id="password"
-        autocomplete="true"
+        autocomplete="off"
       />
 
       <label for="confirmpassword"
@@ -50,12 +50,12 @@
         type="password"
         placeholder="Confirm Password : "
         id="confirmpassword"
-        autocomplete="true"
+        autocomplete="off"
       />
       <br />
       <button type="submit" id="regbutton">Register</button>
       <p id="forgot">Already have an account?</p>
-      <a href="index.html"><button type="button" id="btnlog">Login</button></a>
+      <a href="login.html"><button type="button" id="btnlog">Login</button></a>
     </form>
     <script src="script.js"></script>
   </body>
